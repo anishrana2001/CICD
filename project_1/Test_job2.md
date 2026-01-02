@@ -7,12 +7,12 @@ image: node:latest   # Using latest image
 stages:              # We have only one stage, i.e. test
   - test
 
-test1-job:           # Job Name is "test1-job"
+test-job1:           # Job Name is "test-job1"
   stage: test        # This job run under "test" stage.
   script:
     - npx html-validator-cli --file=index.html --verbose
 	
-test2-job:             # 2nd Job
+test-job2:             # 2nd Job
   stage: test          # This job run under "test" stage.
   image: node:latest   # Use the same environment for consistency
   script:
@@ -58,12 +58,12 @@ image: node:latest   # Using latest image
 stages:              # We have only one stage, i.e. test
   - test
 
-test1-job:           # Job Name is "test1-job"
+test-job1:           # Job Name is "test-job1"
   stage: test        # This job run under "test" stage.
   script:
     - npx html-validator-cli --file=index.html --verbose
 
-test2-job:             # 2nd Job
+test-job2:             # 2nd Job
   stage: test          # This job run under "test" stage.
   image: node:latest   # Use the same environment for consistency
   script:
