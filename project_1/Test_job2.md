@@ -19,7 +19,6 @@ test-job2:             # 2nd Job
     - echo "Running tests..."
     - npm install
     - npm run test
-  # Dependencies can automatically use artifacts from previous stages
   
   only:
     - main       # It will use "main" branch.
@@ -57,18 +56,20 @@ image: node:latest   # Using latest image
 
 stages:              # We have only one stage, i.e. test
   - test
-
+######################### test-job1 Start ###########################################
 test-job1:           # Job Name is "test-job1"
   stage: test        # This job run under "test" stage.
   script:
     - npx html-validator-cli --file=index.html --verbose
+######################### test-job1 END ###########################################
 
+######################### test-job2 Start ###########################################
 test-job2:             # 2nd Job
   stage: test          # This job run under "test" stage.
   image: node:latest   # Use the same environment for consistency
   script:
     - echo "Running tests..."
-  
+######################### test-job2 END ###########################################
   only:
     - main       # It will use "main" branch.
 EOF
