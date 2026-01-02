@@ -66,6 +66,20 @@ ls -la
 git remote add origin  https://gitlab.com/anishrana2001/project_1.git
 ```
 
+```
+git add index.html .gitlab-ci.yml
+```
+
+```
+git commit -m "First Commit"
+```
+
+
+```
+git push origin main
+```
+
+<img width="1897" height="913" alt="Screenshot 2026-01-02 at 6 12 33 PM" src="https://github.com/user-attachments/assets/ecc3c95b-73d1-4f61-bea3-dc4d27457a18" />
 
 
 
