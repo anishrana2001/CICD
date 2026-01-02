@@ -83,6 +83,44 @@ git push origin main
 
 
 
+### Now, its try with Error in `index.html` file.
+```
+vi index.html
+```
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Project_1: My First Web Page</title>
+<link href="styles.css">
+</head>
+<body>
+    <h1>Welcome to My Website under Project_1</h1>
+    <p>This is my first paragraph on a basic HTML page.</p>
+    <p style="color: red; font-size: 1.5em;">Test Line2 for Project_1</p>
+</body>
+</html>
+```
+
+
+```
+git add index.html
+```
+```
+git commit -m "With Error"
+```
+```
+git push origin main
+```
+
+<img width="1897" height="913" alt="Screenshot 2026-01-02 at 7 38 43 PM" src="https://github.com/user-attachments/assets/3e391ebc-6c11-495a-af28-72d226526107" />
+
+
+
+
+
 
 ```
 anishrana@Anishs-MacBook-Pro GitTest % pwd
