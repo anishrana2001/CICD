@@ -55,6 +55,7 @@ git remote remove origin
 ```
 
 - If you are using NAT in VM, then you need to add the port forwarding.
+
 ```
 VBoxManage natnetwork modify --netname Airtel-network --port-forward-4 "web_rule:tcp:[]:8080:[10.10.10.16]:80"
 ```
@@ -71,11 +72,15 @@ git remote add origin http://127.0.0.1:8080/learning_cicd/project_2.git
 ```
 git add .
 ```
+
+
 - Commit the files. 
 ```
 git commit -m "adding 2 files"
 ```
-```
+
+
+
 - Push the files to GitLab.
 ```
 git push --set-upstream origin main
