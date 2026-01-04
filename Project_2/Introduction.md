@@ -4,6 +4,43 @@
 https://docs.gitlab.com/install/package/almalinux/?tab=Community+Edition
 ```
 
+### Create a new user `devops` and assign the admin privileges. 
+
+#### How to download Chrome Browser on CentOS Stream 9
+
+```
+[student@servera ~]$ wget https://dl.google.com/linux/linux_signing_key.pub
+--2026-01-04 09:20:30--  https://dl.google.com/linux/linux_signing_key.pub
+Resolving dl.google.com (dl.google.com)... 216.58.196.110, 2404:6800:4002:810::200e
+Connecting to dl.google.com (dl.google.com)|216.58.196.110|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 17382 (17K) [application/vnd.exstream-package]
+Saving to: ‘linux_signing_key.pub’
+
+linux_signing_key.pub         100%[=================================================>]  16.97K  --.-KB/s    in 0.002s  
+
+2026-01-04 09:20:30 (9.54 MB/s) - ‘linux_signing_key.pub’ saved [17382/17382]
+
+[student@servera ~]$ sudo rpm --import linux_signing_key.pub
+[student@servera ~]$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+--2026-01-04 09:21:23--  https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+Resolving dl.google.com (dl.google.com)... 216.58.196.110, 2404:6800:4002:805::200e
+Connecting to dl.google.com (dl.google.com)|216.58.196.110|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 120908153 (115M) [application/x-rpm]
+Saving to: ‘google-chrome-stable_current_x86_64.rpm’
+
+google-chrome-stable_current_ 100%[=================================================>] 115.31M  7.86MB/s    in 9.1s    
+
+2026-01-04 09:21:33 (12.6 MB/s) - ‘google-chrome-stable_current_x86_64.rpm’ saved [120908153/120908153]
+
+[student@servera ~]$ sudo dnf install -y google-chrome-stable_current_x86_64.rpm
+gitlab_gitlab-ce                                                                        222  B/s | 833  B     00:03    
+gitlab_gitlab-ce-source
+
+```
+
+
 <img width="1405" height="600" alt="Screenshot 2026-01-03 at 7 23 30 PM" src="https://github.com/user-attachments/assets/8f8809bc-4c48-4a3b-946c-ca462476b6a3" />
 
 
