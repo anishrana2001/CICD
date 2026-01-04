@@ -30,6 +30,11 @@ sudo /usr/local/bin/gitlab-runner install --user=gitlab-runner --working-directo
 ```
 sudo /usr/local/bin/gitlab-runner start
 ```
+### Verification 
+```
+/usr/local/bin/gitlab-runner --version
+```
+
 #### For your references.
 ```
 [student@servera ~]$ sudo curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-arm64"
