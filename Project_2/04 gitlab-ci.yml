@@ -12,7 +12,7 @@ test-job:				# Job Name is "test-job"
 variables:
 	SSH_PRIVATE_KEY: "$SSH_PRIVATE_KEY"
 before_script:
-	- yum update -y && yum install -y openssh-client
+	- yum update -y && yum install -y openssh-client nginx
 	- mkdir -p ~/.ssh
 	- echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
 	- chmod 400 ~/.ssh/id_rsa
@@ -20,6 +20,6 @@ before_script:
 deploy_to_server:
 	stage: deploy
 	script:
-		- scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no index.html ec2-user@<EC2-PublicIP>:/var/www/html/
+		- scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no index.html student@10.10.10.16:/var/www/html/
 	only:
 		- main
