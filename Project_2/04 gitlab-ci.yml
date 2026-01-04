@@ -1,0 +1,25 @@
+image: node:latest		# Using latest image
+stages: 				# We have only TWO stages, i.e. test & deploy
+	- test
+	- deploy
+
+test-job:				# Job Name is "test-job"
+	stage: test
+	script:
+		- npx html-validator-cli --file=index.html --verbose
+	only:
+		- main
+variables:
+	SSH_PRIVATE_KEY: "$SSH_PRIVATE_KEY"
+before_script:
+	- yum update -y && yum install -y openssh-client
+	- mkdir -p ~/.ssh
+	- echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+	- chmod 400 ~/.ssh/id_rsa
+
+deploy_to_server:
+	stage: deploy
+	script:
+		- scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no index.html ec2-user@<EC2-PublicIP>:/var/www/html/
+	only:
+		- main
