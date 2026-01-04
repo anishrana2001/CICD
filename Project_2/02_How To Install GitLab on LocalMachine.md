@@ -3,9 +3,9 @@
 https://docs.gitlab.com/install/package/almalinux/?tab=Community+Edition
 ```
 
-### Create a new user `devops` and assign the admin privileges. 
+- Create a new user `devops` and assign the admin privileges. 
 
-### How to disable sing-up page?
+- How to disable sing-up page?
 ```
 http://10.10.10.16/users/sign_in
 ```
