@@ -11,7 +11,7 @@ http://10.10.10.16/users/sign_in
 ```
 
 ### How to enable the Runner ?
-### If you are using "Centos Stream 9" OS on the top of you Mac book then you need to follow these steps.
+- If you are using "Centos Stream 9" OS on the top of you Mac book then you need to follow these steps.
 #### Download the binary for your system
 ```
 sudo curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-arm64"
