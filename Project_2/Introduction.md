@@ -35,6 +35,11 @@ sudo /usr/local/bin/gitlab-runner start
 /usr/local/bin/gitlab-runner --version
 ```
 
+### Add the runner and select the VirtualBox 
+
+### Referesh the page, you should see  your new runner on the GitLab page. Edit the runner, and select `Run untagged jobs`.
+
+
 #### For your references.
 ```
 [student@servera ~]$ sudo curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-arm64"
