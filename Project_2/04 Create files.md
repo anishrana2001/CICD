@@ -20,32 +20,53 @@ EOF
 - `.gitlab-ci.yml` file.
 ```
 cat <<EOF > .gitlab-ci.yml
-image: node:latest		# Using latest image
-stages: 				# We have only TWO stages, i.e. test & deploy
-	- test
-	- deploy
+stages:
+  - test
+anishrana@Anishs-MacBook-Pro project_2 % cat .gitlab-ci.yml 
+stages:
+  - test
+  - deploy
 
-test-job:				# Job Name is "test-job"
-	stage: test
-	script:
-		- npx html-validator-cli --file=index.html --verbose
-	only:
-		- main
 variables:
-	SSH_PRIVATE_KEY: "$SSH_PRIVATE_KEY"    ## Added the variable on Gitlab page.
-before_script:
-	- yum update -y && yum install -y openssh-client nginx
-	- mkdir -p ~/.ssh
-	- echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-	- chmod 400 ~/.ssh/id_rsa
-    - systemctl enable --now nginx.service
+  # SSH_PRIVATE_KEY is pulled securely from GitLab Settings, do not define empty here.
 
-deploy_to_server:
-	stage: deploy
-	script:
-		- scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no index.html student@10.10.10.16:/var/www/html/
-	only:
-		- main
+html_page-checker:
+  stage: test
+  tags:
+    - linux-runner
+  script:
+    # Ensure Node is installed on servera, or install it temporarily
+    - command -v npx >/dev/null || sudo  yum install -y nodejs
+    - npx html-validator-cli --file=index.html --verbose
+  only:
+    - main
+
+deploy_nginx:
+  stage: deploy
+  tags:
+    - linux-runner
+  before_script:
+    - 'command -v ssh-agent >/dev/null || (sudo  yum install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    # Add serverb to known_hosts to avoid "Host key verification failed" prompt
+    - ssh-keyscan 10.10.10.19 >> ~/.ssh/known_hosts
+  script:
+    - echo "Deploying NGINX to serverb..."
+    # 1. Install Nginx (with sudo)
+    - ssh student@10.10.10.19 "sudo yum install -y nginx && sudo systemctl enable --now nginx"
+    
+    # 2. Copy file to student home (avoid root SCP issues)
+    - scp index.html student@10.10.10.19:/home/student/
+    
+    # 3. Move file, fix ownership, and FIX SELINUX CONTEXT
+    - ssh student@10.10.10.19 "sudo mv /home/student/index.html /usr/share/nginx/html/ && sudo chown root:root /usr/share/nginx/html/index.html && sudo restorecon -v /usr/share/nginx/html/index.html"
+    - echo "Deployment Complete!"
+
+  only:
+    - main
 EOF
 ```
 
