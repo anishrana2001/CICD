@@ -53,10 +53,10 @@ vi /etc/gitlab/gitlab.rb
 ```
 ### Find the line external_url.
 
-### Change it to your VM's internal NAT IP (usually 10.10.10.16 ).
+### Change it to your VM's internal NAT IP (Mine is 10.10.10.16 ).
 
 ```
-external_url 'http://10.10.10.15'
+external_url 'http://10.10.10.16'
 ```
 ### (Do not use https yet to keep it simple).
 
@@ -73,6 +73,10 @@ cat /etc/gitlab/initial_root_password
 ### (Copy this password. It expires in 24 hours).
 
 ## 8. Access from your Mac
+#### Run the below command `on local machine` to forward the traffic from 8080 port to 80 destination. 
+```
+VBoxManage natnetwork modify --netname Airtel-network --port-forward-4 "web_rule:tcp:[]:8080:[10.10.10.16]:80"
+```
 ### Since you have Port Forwarding (Mac 8080 -> VM 80), open your Mac browser and go to:
 ```
 http://127.0.0.1:8080
