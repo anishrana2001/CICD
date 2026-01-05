@@ -15,7 +15,8 @@ http://10.10.10.16/users/sign_in
 # Here is the step-by-step guide to installing GitLab CE (Community Edition) and a GitLab Runner on your CentOS Stream 9 / RHEL 9 VM (servera).
 
 ### Prerequisites
-### RAM: Ensure your VM has at least `4GB` of RAM (`8GB` is recommended). GitLab is very resource-heavy and CPU `4`
+- RAM: Ensure your VM has at least `4GB` of RAM (`8GB` is recommended). GitLab is very resource-heavy 
+- CPU `4`
 
 ### Root Access: Run these commands as root (sudo -i).
 
