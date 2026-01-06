@@ -1,9 +1,9 @@
 cat <<EOF > DevOps_Master_Course.md
 # DevOps Master Course: From "Hello World" to Professional
 
-**Project Name:** DevOpsWala Status Portal
-**Instructor:** AI Mentor
-**Student:** Future DevOps Engineer
+- **Project Name:** DevOpsWala Status Portal
+- **Instructor:** AI Mentor
+- **Student:** Future DevOps Engineer
 
 ---
 
