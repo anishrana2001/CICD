@@ -46,7 +46,8 @@ ssh student@10.10.10.19 "uptime"
 
 - Team::Dev (Blue)
 - Team::Ops-L3 (Red)
-### Status::Ready-for-Prod (Green)
+- Status::Ready-for-Prod (Green)
+
 ### Create Issue: Go to Issues > New Issue.
 
 - Title: "Create Homepage for Dashboard"
@@ -166,21 +167,17 @@ git push origin feature/dev-team-1
 
 ### Step 4: The Production Deployment (Ops L3 Action)
 
-Merge the request. A new pipeline starts on main.
+- Merge the request. A new pipeline starts on main.
+- The Pause: The pipeline will run test and deploy_staging, but it will stop at deploy_prod because it is set to manual.
+- Ops L3 Action:
+- Go to the Pipeline view.
+- Click the Play button (▶) next to deploy_to_production.
+- This simulates the Expert giving final approval.
 
-The Pause: The pipeline will run test and deploy_staging, but it will stop at deploy_prod because it is set to manual.
+## Step 5: Verification
+#### Open your browser or curl from Servera:
 
-Ops L3 Action:
-
-Go to the Pipeline view.
-
-Click the Play button (▶) next to deploy_to_production.
-
-This simulates the Expert giving final approval.
-
-Step 5: Verification
-Open your browser or curl from Servera:
-
-bash
+```
 curl http://10.10.10.19
-# Output: <h1>DevOpsWala Status Portal</h1>
+```
+## Output: <h1>DevOpsWala Status Portal</h1>
