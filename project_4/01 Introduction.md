@@ -31,7 +31,7 @@ ssh-copy-id root@10.10.10.19
 ssh root@10.10.10.19 "uptime"
 ```
 
-## 2. Team & Project Management
+## 2.1 Team & Project Management
 **Admin Task:** Create these users in GitLab and assign them to the project:
 
 | User | Role | Responsibility |
@@ -41,16 +41,70 @@ ssh root@10.10.10.19 "uptime"
 | `ops_support`| Developer | L2 Support (Fixes Staging). |
 | `ops_lead` | Maintainer | L3 Expert (Approves Prod). |
 
-**Manager Task:** Create Milestone `v1.0 Launch`.
+## 2.2 Plan work in GitLab (Milestone, labels, issue)
 
-## 3. The Workflow (Phase 1)
-**Issue #1:** "Create Homepage for Dashboard"
-**Assignee:** `dev_pawan`
+### 2.2.1 **Create milestone**
+**Manager Task:**  
+Go to Issues → Milestones → New milestone
+Title: `v1.0 Launch`.
 
-1.  **Dev:** Clones repo, branches to `feature/dev-team-1`, creates `index.html`.
-2.  **Ops L3:** Creates `.gitlab-ci.yml` (Basic Version).
+---
+### 2.2.2 Create labels
+Go to Manage → Labels and create:
+- Team::Dev
+- Team::Ops-L1
+- Team::Ops-L2
+- Team::Ops-L3
+- Status::Ready-for-Prod
+---
+### 2.2.3 Create the main issue (the “story task”)
+Go to Issues → New issue:
+- Title: `Create Homepage for Dashboard`
+- Assignee: `dev_pawan`
+- Milestone: `v1.0 Launch`
+- Labels: `Team::Dev`
+---
+### 2.2.4 Branching model (2 developer branches)
+**Required branches**
+- `feature/dev-team-1` (Developer 1 work)
+- `feature/dev-team-2` (Developer 2 work)
+- `main` (production)
 
-**Phase 1 Pipeline Code (`.gitlab-ci.yml`):**
+**Developer workflow on MacBook**
+- Clone repo:
+```
+git clone http://10.10.10.16/<group-or-namespace>/status-portal.git
+cd status-portal
+```
+
+- Create 2 feature branches:
+```
+git checkout -b feature/dev-team-1
+git push -u origin feature/dev-team-1
+
+git checkout -b feature/dev-team-2
+git push -u origin feature/dev-team-2
+```
+---
+### 2.2.5 App code `index.html`
+- On feature/dev-team-1, create index.html:
+```
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>DevOpsWala Status Portal</h1>
+    <p>System is Operational. Deployed by GitLab CI.</p>
+  </body>
+</html>
+```
+- Commit + push:
+```
+git add index.html
+git commit -m "Add status portal homepage (Issue #1)"
+git push
+```
+
+**Phase 1 Pipeline Code `.gitlab-ci.yml`:**
 ```yaml
 stages:
   - test
@@ -63,26 +117,32 @@ variables:
 
 code_quality:
   stage: test
-  tags: [shell]
+  tags: shell
   script:
     - test -f index.html || exit 1
 
 deploy_staging:
   stage: deploy_staging
-  tags: [shell]
+  tags: shell
   script:
     - scp index.html \$TARGET_USER@\$TARGET_SERVER:/tmp/index_test.html
 
 deploy_prod:
   stage: deploy_prod
-  tags: [shell]
+  tags: shell
   script:
+    - echo "Ops L3: Installing NGINX and deploying to production path..."
     - ssh \$TARGET_USER@\$TARGET_SERVER "yum install -y nginx && systemctl enable --now nginx"
     - scp index.html \$TARGET_USER@\$TARGET_SERVER:/usr/share/nginx/html/index.html
   when: manual
   only: [main]
 ```
-
+- Commit + push .gitlab-ci.yml on your feature branch:
+```
+git add .gitlab-ci.yml
+git commit -m "Add CI/CD pipeline"
+git push
+```
 ---
 
 # Phase 2: The Professional Upgrade (Advanced Tasks)
