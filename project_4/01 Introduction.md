@@ -1,4 +1,4 @@
-cat <<EOF > DevOps_Master_Course.md
+
 # DevOps Master Course: From "Hello World" to Professional
 
 - **Project Name:** DevOpsWala Status Portal
@@ -200,4 +200,4 @@ Once all modules are complete:
 8.  **Notification** is sent: "Production Live".
 
 **Congratulations! You are now operating as a Junior DevOps Engineer.**
-EOF
+
