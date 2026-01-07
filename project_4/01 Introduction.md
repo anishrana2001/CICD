@@ -35,11 +35,11 @@ ssh root@10.10.10.19 "uptime"
 **Admin Task:** Create these users in GitLab and assign them to the project:
 
 | User | Role | Responsibility |
-| :--- | :--- | :--- |
-| `dev_pawan` | Developer | Writes HTML code. |
-| `ops_monu` | Reporter | L1 Monitoring (Watches Pipelines). |
-| `ops_support`| Developer | L2 Support (Fixes Staging). |
-| `ops_lead` | Maintainer | L3 Expert (Approves Prod). |
+| :--- | :--- | :--- | :---|
+| `dev_pawan` | Developer | Writes HTML code. | Password |
+| `ops_monu` | Reporter | L1 Monitoring (Watches Pipelines). | Password@1234|
+| `ops_support`| Developer | L2 Support (Fixes Staging). | Password@1234|
+| `ops_lead` | Maintainer | L3 Expert (Approves Prod). | Password@1234|
 
 ## 2.2 Plan work in GitLab (Milestone, labels, issue)
 
