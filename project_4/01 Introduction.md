@@ -140,19 +140,19 @@ build_app:
 **Lab Steps:**
 1.  **On Servera (Runner):** Install Ansible (`sudo dnf install ansible-core`).
 2.  **Create `inventory.ini`:**
-   ```ini
+```ini
     [web]
     10.10.10.19 ansible_user=deployer
-    ```
+```
 3.  **Create `deploy.yml` (Playbook):**
     *   Task 1: Install Nginx (requires root/sudo).
     *   Task 2: Copy `index.html` to `/usr/share/nginx/html`.
 4.  **Update CI/CD:**
-   ```yaml
+```yaml
     deploy_prod:
       script:
         - ansible-playbook -i inventory.ini deploy.yml
-   ```
+```
 
 ## Module 4: Quality Gates (Linting)
 **Issue Title:** "Add HTML Linting to Test Stage"
