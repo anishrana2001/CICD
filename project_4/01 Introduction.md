@@ -33,6 +33,12 @@ ssh root@10.10.10.19 "uptime"
 
 ## 2.1 Team & Project Management
 **Admin Task:** Create these users in GitLab and assign them to the project:
+- Go to Admin Area (the wrench icon).
+- Navigate to **Overview** > **Users**.
+- Click **New User**.
+- Manually create the user i.e. `dev_pawan` with a dummy email and password.
+- Once created, return to your project and add them.
+
 
 | User | Role | Responsibility | Password |
 | :--- | :--- | :--- | :---|
