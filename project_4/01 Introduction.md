@@ -36,10 +36,10 @@ ssh root@10.10.10.19 "uptime"
 
 | User | Role | Responsibility |
 | :--- | :--- | :--- |
-| \`dev_pawan\` | Developer | Writes HTML code. |
-| \`ops_monu\` | Reporter | L1 Monitoring (Watches Pipelines). |
-| \`ops_support\`| Developer | L2 Support (Fixes Staging). |
-| \`ops_lead\` | Maintainer | L3 Expert (Approves Prod). |
+| `dev_pawan` | Developer | Writes HTML code. |
+| `ops_monu` | Reporter | L1 Monitoring (Watches Pipelines). |
+| `ops_support`| Developer | L2 Support (Fixes Staging). |
+| `ops_lead` | Maintainer | L3 Expert (Approves Prod). |
 
 **Manager Task:** Create Milestone \`v1.0 Launch\`.
 
