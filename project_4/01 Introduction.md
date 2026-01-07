@@ -19,14 +19,17 @@
 
 **Step 1.1: Establish Trust (SSH)**
 Run this on **Servera** as the \`gitlab-runner\` user to allow password-less access to Serverb:
-\`\`\`bash
-# On Servera
+
+### On Servera
+```
 sudo su - gitlab-runner
 ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 ssh-copy-id root@10.10.10.19
-# Verify
+```
+### Verify
+```
 ssh root@10.10.10.19 "uptime"
-\`\`\`
+```
 
 ## 2. Team & Project Management
 **Admin Task:** Create these users in GitLab and assign them to the project:
