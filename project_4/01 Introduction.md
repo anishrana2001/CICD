@@ -36,9 +36,9 @@ ssh root@10.10.10.19 "uptime"
 - Go to Admin Area (the wrench icon).
 - Navigate to **Overview** > **Users**.
 - Click **New User**.
-- Manually create the user i.e. `dev_pawan` with a dummy email and password.
+- Manually create the user i.e. `dev_pawan` with a dummy email and password mentioned in the below tabel.
 - Once created, return to your project and add them.
-
+- **Manage** -> **Members** -> **Invite members**
 
 | User | Role | Responsibility | Password |
 | :--- | :--- | :--- | :---|
