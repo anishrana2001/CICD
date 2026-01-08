@@ -51,7 +51,7 @@ ssh root@10.10.10.19 "uptime"
 
 ### 2.2.1 **Create milestone**
 **Manager Task:**  
-Go to **Issues** → **Milestones** → **New milestone**
+Go to **Plan** → **Milestones** → **New milestone**
 Title: `v1.0 Launch`.
 
 ---
