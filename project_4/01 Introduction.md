@@ -51,12 +51,12 @@ ssh root@10.10.10.19 "uptime"
 
 ### 2.2.1 **Create milestone**
 **Manager Task:**  
-Go to Issues → Milestones → New milestone
+Go to **Issues** → **Milestones** → **New milestone**
 Title: `v1.0 Launch`.
 
 ---
 ### 2.2.2 Create labels
-Go to Manage → Labels and create:
+Go to **Manage** → **Labels** and create:
 - Team::Dev
 - Team::Ops-L1
 - Team::Ops-L2
@@ -64,7 +64,7 @@ Go to Manage → Labels and create:
 - Status::Ready-for-Prod
 ---
 ### 2.2.3 Create the main issue (the “story task”)
-Go to Issues → New issue:
+Go to **Issues** → **New issue**:
 - Title: `Create Homepage for Dashboard`
 - Assignee: `dev_pawan`
 - Milestone: `v1.0 Launch`
