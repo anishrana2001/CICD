@@ -64,7 +64,7 @@ Go to **Manage** → **Labels** and create:
 - Status::Ready-for-Prod
 ---
 ### 2.2.3 Create the main issue (the “story task”)
-Go to **Issues** → **New issue**:
+Go to **Plan** ➡️  **Issues** ➡️  **New issue**:
 - Title: `Create Homepage for Dashboard`
 - Assignee: `dev_pawan`
 - Milestone: `v1.0 Launch`
