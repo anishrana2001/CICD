@@ -179,30 +179,27 @@ git push
 - Expand **`Code`** and select **`Merge requests`**.
 - Click **`Create merge request`**
 - Under **Source branch** 
+- Source branch: `feature/dev-team-1` -> Target branch: main.
 
 <img width="1488" height="519" alt="Screenshot 2026-01-10 at 10 06 32 PM" src="https://github.com/user-attachments/assets/c4bf0951-333e-45b7-891c-142f394b160f" />
 
-
-
-- Source branch: `feature/dev-team-1` -> Target branch: main.
 - Fill in the details:
 
-	- Title: "Add Dashboard Homepage (Closes Issue #1)"
-	- Description: "Added the initial index.html and CI/CD pipeline. Verified on staging."
-	- Assignee: `ops_lead` (The L3 Expert who approves Prod).
-	- Milestone: Select `v1.0 Launch`.
-	- Labels: Add `Status::Ready-for-Prod`.
+	- **Title:** `Feature/dev team 1: Add Dashboard Homepage (Closes Issue #1)`
+	- **Description**: `Added the initial index.html and CI/CD pipeline. Verified on staging.`
+	- **Assignee**: `ops_lead` (The L3 Expert who approves Prod).
+	- **Milestone**: Select `v1.0 Launch`.
+	- **Labels**: Add `Status::Ready-for-Prod`.
 	- Click **Create merge request**.
 
 
-
+## GitLab login must be L3 user
 ## Step 2: **Review and Merge (Ops L3 Action)?**
 - The Ops Lead (`ops_lead`) reviews the merges request.
 - Log in (or act) as `ops_lead`.
 - Go to Merge requests	and open the request created above.
 - Review the changes (Files tab).
 - `ops_lead` observed that developer used **root** user which is a security threat. So, he reject and ask developer to update the code and use restricted user. 
-
 
 
 
