@@ -170,6 +170,35 @@ git add .gitlab-ci.yml
 git commit -m "Add CI/CD pipeline"
 git push
 ```
+
+## As per the developer, the code is working fine on `test` and `deploy_staging` stage.
+### Step 1: Create a Merge Request (Dev to Ops)
+- The developer (`dev_pawan`) needs to request that their code be merged into the production branch.
+
+- Go to your project status-portal in GitLab.
+- You should see a banner at the top saying "You pushed to feature/dev-team-1...". Click Create merge request.
+- Source branch: `feature/dev-team-1` -> Target branch: main.
+- Fill in the details:
+
+	- Title: "Add Dashboard Homepage (Closes Issue #1)"
+	- Description: "Added the initial index.html and CI/CD pipeline. Verified on staging."
+	- Assignee: `ops_lead` (The L3 Expert who approves Prod).
+	- Milestone: Select `v1.0 Launch`.
+	- Labels: Add `Status::Ready-for-Prod`.
+	- Click **Create merge request**.
+
+
+
+## Step 2: **Review and Merge (Ops L3 Action)?**
+- The Ops Lead (`ops_lead`) reviews the merges request.
+- Log in (or act) as `ops_lead`.
+- Go to Merge requests	and open the request created above.
+- Review the changes (Files tab).
+- `ops_lead` observed that developer used **root** user which is a security threat. So, he reject and ask developer to update the code and use restricted user. 
+
+
+
+
 ---
 
 # Phase 2: The Professional Upgrade (Advanced Tasks)
