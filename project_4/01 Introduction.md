@@ -178,9 +178,7 @@ git push
 - Go to your project `status-portal` in GitLab.
 - G
 
-![
-  
-](<Screenshot 2026-01-10 at 9.59.35 PM.png>)
+
 - Source branch: `feature/dev-team-1` -> Target branch: main.
 - Fill in the details:
 
