@@ -120,12 +120,7 @@ cat <<EOF > index.html
 </html>
 EOF
 ```
-- Commit + push:
-```
-git add index.html
-git commit -m "Add status portal homepage (Issue #1)"
-git push
-```
+
 
 **Phase 1 Pipeline Code `.gitlab-ci.yml`:**
 ```yaml
@@ -141,25 +136,32 @@ variables:
 
 code_quality:
   stage: test
-  tags: shell
+  tags:
+    - linux-runner
   script:
     - test -f index.html || exit 1
 
 deploy_staging:
   stage: deploy_staging
-  tags: shell
+  tags:
+    - linux-runner
   script:
-    - scp index.html \$TARGET_USER@\$TARGET_SERVER:/tmp/index_test.html
+    - scp index.html $TARGET_USER@$TARGET_SERVER:/tmp/index_test.html
 
 deploy_prod:
   stage: deploy_prod
-  tags: shell
+  tags:
+    - linux-runner
   script:
-    - echo "Ops L3: Installing NGINX and deploying to production path..."
-    - ssh \$TARGET_USER@\$TARGET_SERVER "yum install -y nginx && systemctl enable --now nginx"
-    - scp index.html \$TARGET_USER@\$TARGET_SERVER:/usr/share/nginx/html/index.html
+    - |
+      echo "Ops L3: Installing NGINX and deploying to production path..."
+      ssh $TARGET_USER@$TARGET_SERVER "sudo yum install -y nginx && sudo systemctl enable --now nginx"
+      scp index.html $TARGET_USER@$TARGET_SERVER:/tmp/index_prod.html
+      ssh $TARGET_USER@$TARGET_SERVER "sudo mv /tmp/index_prod.html /usr/share/nginx/html/index.html"
+      ssh $TARGET_USER@$TARGET_SERVER "sudo restorecon -v /usr/share/nginx/html/index.html || true"
   when: manual
-  only: [main]
+  only:
+    - main
 EOF
 ```
 - Commit + push .gitlab-ci.yml on your feature branch:
