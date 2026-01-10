@@ -176,7 +176,12 @@ git push
 - The developer (`dev_pawan`) needs to request that their code be merged into the production branch.
 
 - Go to your project `status-portal` in GitLab.
-- G
+- Expand **`Code`** and select **`Merge requests`**.
+- Click **`Create merge request`**
+- Under **Source branch** 
+
+<img width="1488" height="519" alt="Screenshot 2026-01-10 at 10 06 32 PM" src="https://github.com/user-attachments/assets/c4bf0951-333e-45b7-891c-142f394b160f" />
+
 
 
 - Source branch: `feature/dev-team-1` -> Target branch: main.
