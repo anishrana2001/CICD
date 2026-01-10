@@ -175,8 +175,12 @@ git push
 ### Step 1: Create a Merge Request (Dev to Ops)
 - The developer (`dev_pawan`) needs to request that their code be merged into the production branch.
 
-- Go to your project status-portal in GitLab.
-- You should see a banner at the top saying "You pushed to feature/dev-team-1...". Click Create merge request.
+- Go to your project `status-portal` in GitLab.
+- G
+
+![
+  
+](<Screenshot 2026-01-10 at 9.59.35 PM.png>)
 - Source branch: `feature/dev-team-1` -> Target branch: main.
 - Fill in the details:
 
