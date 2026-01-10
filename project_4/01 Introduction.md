@@ -64,11 +64,15 @@ Go to **Manage** → **Labels** and create:
 - Status::Ready-for-Prod
 ---
 ### 2.2.3 Create the main issue (the “story task”)
-Go to **Plan** ➡️  **Issues** ➡️  **New issue**:
-- Title: `Create Homepage for Dashboard`
-- Assignee: `dev_pawan`
-- Milestone: `v1.0 Launch`
-- Labels: `Team::Dev`
+Go to **Plan** ➡️  **Issues** ➡️  **New item**:
+- **Title**: `Create Homepage for Dashboard`
+- **Assignee**: `dev_pawan`
+- **Labels**: `Team::Dev`
+- **Milestone**: `v1.0 Launch`
+
+<img width="1000" height="832" alt="Screenshot 2026-01-10 at 6 52 08 PM" src="https://github.com/user-attachments/assets/2cb1bfd7-0063-4230-baba-2c691643decb" />
+
+
 ---
 ### 2.2.4 Branching model (2 developer branches)
 **Required branches**
