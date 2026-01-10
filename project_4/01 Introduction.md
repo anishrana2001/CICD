@@ -81,24 +81,36 @@ Go to **Plan** ➡️  **Issues** ➡️  **New item**:
 - `main` (production)
 
 **Developer workflow on MacBook**
-- Clone repo:
+- Clone repo, please note that if you are not using port forwarding then you should use only your Gitlab IP only (not with port):
 ```
-git clone http://10.10.10.16/<group-or-namespace>/status-portal.git
+git clone http://127.0.0.1:8080/learning_cicd1/status-portal.git
+ls -ltr
 cd status-portal
+ls -ltr
+git remote -v
 ```
 
-- Create 2 feature branches:
+- Create main and 2 feature branches :
+
 ```
+git checkout -b main
 git checkout -b feature/dev-team-1
-git push -u origin feature/dev-team-1
-
 git checkout -b feature/dev-team-2
-git push -u origin feature/dev-team-2
+git branch
+
 ```
+
+
 ---
 ### 2.2.5 App code `index.html`
 - On feature/dev-team-1, create index.html:
+
+#### Switch to branch ().
 ```
+git switch feature/dev-team-1 
+```
+```
+cat <<EOF > index.html
 <!DOCTYPE html>
 <html>
   <body>
@@ -106,6 +118,7 @@ git push -u origin feature/dev-team-2
     <p>System is Operational. Deployed by GitLab CI.</p>
   </body>
 </html>
+EOF
 ```
 - Commit + push:
 ```
@@ -116,6 +129,7 @@ git push
 
 **Phase 1 Pipeline Code `.gitlab-ci.yml`:**
 ```yaml
+cat <<EOF > .gitlab-ci.yml
 stages:
   - test
   - deploy_staging
@@ -146,6 +160,7 @@ deploy_prod:
     - scp index.html \$TARGET_USER@\$TARGET_SERVER:/usr/share/nginx/html/index.html
   when: manual
   only: [main]
+EOF
 ```
 - Commit + push .gitlab-ci.yml on your feature branch:
 ```
