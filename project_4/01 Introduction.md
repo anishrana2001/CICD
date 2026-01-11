@@ -199,32 +199,42 @@ git push
 - Log in (or act) as `ops_lead`.
 - Go to Merge requests	and open the request created above.
 - Review the changes (Files tab).
-- `ops_lead` observed that developer used **root** user which is a security threat. So, he reject and ask developer to update the code and use restricted user. 
+- `ops_lead` observed that developer used **root** user which is a security threat. So, he re-assing the task to `dev_pawan` and ask developer to update the code and use restricted user. 
+
+# Below are the tasks that need to be done by Admin user **`ops_lead`** so that developer user will able to modify the Pipeline and perform her test. 
 
 
-
----
-
-# Phase 2: The Professional Upgrade (Advanced Tasks)
+## Phase 2: The Professional Upgrade (Advanced Tasks)
 
 **Objective:** Transform the basic pipeline into a secure, automated, and robust enterprise solution.
 
-## Module 1: Security Hardening (Kill the Root User)
+### Module 1: Security Hardening (Kill the Root User)
 **Issue Title:** "Implement Least Privilege Deployment User"
 **Assignee:** `ops_lead` (L3)
 
 **Why:** Deploying as `root` is a security risk. We need a restricted user.
 
 **Lab Steps:**
-1.  **On Serverb (Target):**
+1.  **On Serverb (Target):** login as `root` user.
     ```bash
     useradd deployer
+    ```
+    ## Give the password `redhat`
+    ```
+    passwd deployer
+    ```
     # Allow NGINX reload without password
+    ```
     echo "deployer ALL=(root) NOPASSWD: /usr/bin/systemctl reload nginx, /usr/bin/cp" >> /etc/sudoers.d/deployer
     ```
-2.  **On Servera (Runner):**
+3.  **On Servera (Runner)**: switch to root `gitlab-runner`. This user created when we add this node as a runner. 
     *   Update SSH keys to copy ID to `deployer@10.10.10.19`.
-3.  **Update CI/CD:**
+```
+sudo su - gitlab-runner
+cd .ssh/
+ssh-copy-id deployer@10.10.10.19
+```
+4.  **Update CI/CD:** : Below task will be done by **`dev_pawan`** user as he is the developer. 
     *   Change `TARGET_USER` variable to `deployer`.
     *   Update script to use `sudo systemctl reload nginx` instead of full installation commands.
 
