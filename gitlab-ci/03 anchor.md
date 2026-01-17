@@ -102,7 +102,7 @@ git add . ; git commit -m "added double quotes" ; git push --set-upstream origin
 
 
 
-```GitHub
+```
 cat <<EOF > .gitlab-ci.yml
 stages:                   # Defines the pipeline order: first build, then deploy_staging, then deploy_prod.
   - build.                # Jobs assigned to `build` run `first`, then `staging jobs`, then `production jobs.`
@@ -144,7 +144,7 @@ job-01_production_new:   # &job_template creates a YAML anchor named job_templat
 ```
 
 
-
+```
 cat <<EOF > .gitlab-ci.yml
 stages:                   # Defines the pipeline order: first build, then deploy_staging, then deploy_prod.
   - build.                # Jobs assigned to `build` run `first`, then `staging jobs`, then `production jobs.`
@@ -179,3 +179,4 @@ job-01_staging_new:
   variables:
     DB_NAME: staging-db
 EOF
+```
