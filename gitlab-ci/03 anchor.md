@@ -11,7 +11,7 @@ git switch --create main
 cat <<EOF > .gitlab-ci.yml
 - **YAML (.gitlab-ci.yml):**
   ```markdown
-  ```yaml
+
 stages:
   - build
   - deploy_staging
