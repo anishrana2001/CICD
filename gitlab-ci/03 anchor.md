@@ -138,11 +138,7 @@ job-01_staging_new:
     DATABASE_TYPE: Mariadb
     DB_NAME: staging-db
 
-<<<<<<< HEAD
+
 job-01_production_new:   # &job_template creates a YAML anchor named job_template that can be reused.
   <<: *job_template.     # # <<: *job_template → loads (extends) all fields from the anchor job_template.
-``` 
-=======
-job-01_production_new:
-  <<: *job_template
 ```
