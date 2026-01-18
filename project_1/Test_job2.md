@@ -56,24 +56,24 @@ image: node:latest   # Using latest image
 
 stages:              # We have only one stage, i.e. test
   - test
-######################### test-job1 Start ###########################################
+
 test-job1:           # Job Name is "test-job1"
   stage: test        # This job run under "test" stage.
   script:
     - npx html-validator-cli --file=index.html --verbose
-######################### test-job1 END ###########################################
 
-######################### test-job2 Start ###########################################
+
 test-job2:             # 2nd Job
   stage: test          # This job run under "test" stage.
   image: node:latest   # Use the same environment for consistency
   script:
     - echo "Running tests..."
-######################### test-job2 END ###########################################
   only:
     - main       # It will use "main" branch.
 EOF
 ```
+### npm (Node Package Manager): Used primarily to install and manage dependencies (e.g., npm install, npm ci). It permanently downloads packages into a node_modules folder.
+### npx (Node Package Execute): Used to execute binaries or one-off scripts without permanently installing them.
 
 ### Add, Commit (if needed) and then push the file.
 ```
