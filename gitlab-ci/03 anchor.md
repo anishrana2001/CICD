@@ -143,4 +143,3 @@ job-01_production_new:   # &job_template creates a YAML anchor named job_templat
   <<: *job_template.     # # <<: *job_template → loads (extends) all fields from the anchor job_template.
 ```
 
-

@@ -33,7 +33,7 @@ job-01_staging_new:
   stage: deploy_staging      # So it initially gets:`stage: deploy_prod` , Then you override this fields:
   environment:
     name: staging
-  variables:
+  variables:                 # We don't need to use "DATABASE_TYPE: Mariadb"
     DB_NAME: staging-db
 
 job-01_production_new:   # &job_template creates a YAML anchor named job_template that can be reused.
