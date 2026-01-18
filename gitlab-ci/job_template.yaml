@@ -1,0 +1,11 @@
+# Job name starts with a dot (.job-template) → hidden / not run directly.
+.job-template:
+  stage: deploy_prod
+  environment:
+    name: production
+  variables:
+    DATABASE_TYPE: "Mariadb"
+    DB_NAME: "prod-db"
+  script:
+    - echo "Deploying database  on  ..."
+    - if [[ "$CI_ENVIRONMENT_NAME" == "production" ]]; then echo "This should run ONLY on production env."; fi

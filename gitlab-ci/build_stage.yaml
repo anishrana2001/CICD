@@ -1,0 +1,7 @@
+build_file:
+  stage: build
+  script:
+    - echo "Hi! Welcome to 'devops-wala' > initial-file.txt"
+  artifacts:
+    paths:
+      - initial-file.txt
