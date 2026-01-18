@@ -6,4 +6,4 @@ stages:
 
 include:
 - local: 'gitlab-ci/build_stage.yaml'
-- remote: 
+- remote: 'https://raw.githubusercontent.com/anishrana2001/CICD/refs/heads/main/job_template.yaml'
