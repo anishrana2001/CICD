@@ -4,10 +4,11 @@ stages:
   - deploy_staging
   - deploy_prod
 
-# Make sure, Repo, Group and Project are in public.
 include:
   - local: 'build_stage.yaml'
-  - project: 
+  - project: 'learning_cicd1/project_2'
+    file:
+      - job-template.yaml
 
 job-01_staging_new:
   extends: .job-template
@@ -19,3 +20,6 @@ job-01_staging_new:
     DB_NAME: staging-db
 EOF
 ```
+
+
+![alt text](<Screenshot 2026-01-13 at 9.33.52 PM.png>)
