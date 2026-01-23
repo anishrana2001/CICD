@@ -1,11 +1,11 @@
-
-
-
+### Create a `03_anchor` project from `glab` utility.
 ```
-git clone http://127.0.0.1:8080/learning_cicd1/gitlab-ci_yaml/03-ancor.md.git
-cd 03-ancor.md 
-git switch --create main
+mkdir 03_anchor
+cd 03_anchor
+git init
+glab repo create --public --name "03_anchor"
 ```
+
 
 ```
 cat <<EOF > .gitlab-ci.yml
@@ -49,7 +49,7 @@ EOF
 ```
 
 ```
-git add . ; git commit -m "added .gitlab-ci.yml" ; git push --set-upstream origin main
+git add . ; git commit -m "added .gitlab-ci.yml" ; git push -u origin main
 ```
 
 ```
