@@ -33,7 +33,7 @@ glab repo create --public --name "06_Runner_tag"
 
 ## **Example `.gitlab-ci.yml` file**
 ```
-cat <<EOF>> > .gitlab-ci.yml
+cat <<EOF > .gitlab-ci.yml
 job_small:
   script:
     - echo "This job is untagged and runs on the default small Linux x86-64 instance"
