@@ -27,7 +27,7 @@ mkdir 06_Runner_tag
 cd 06_Runner_tag
 git init
 git add . && git commit -m "Init"
-
+glab repo create --public --name "06_Runner_tag"
 
 ```
 
