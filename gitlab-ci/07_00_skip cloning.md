@@ -6,6 +6,7 @@ GitLab.com
 ```
 
 ## We have already login into the `glab`
+```
 mkdir 07_00_skip_cloning
 cd 07_00_skip_cloning
 git init
