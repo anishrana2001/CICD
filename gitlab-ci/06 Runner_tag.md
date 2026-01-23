@@ -2,6 +2,34 @@
 ```
 https://docs.gitlab.com/ci/runners/hosted_runners/linux/
 ```
+### First login into glab account.
+```
+glab auth status
+```
+```
+glab auth login
+```
+```
+anishrana@Anishs-MacBook-Pro 06_Runner_tag % glab auth login
+- Signing into gitlab.com
+- glab config set -h gitlab.com git_protocol https
+✓ Configured Git protocol.
+- glab config set -h gitlab.com api_protocol https
+✓ Configured API protocol.
+✓ Logged in as anishrana2001
+✓ Configuration saved to /Users/anishrana/Library/Application Support/glab-cli/config.yml
+anishrana@Anishs-MacBook-Pro 06_Runner_tag % 
+```
+
+## Create a Project from **`git`**
+```
+mkdir 06_Runner_tag
+cd 06_Runner_tag
+git init
+git add . && git commit -m "Init"
+
+
+```
 
 ## **Example `.gitlab-ci.yml` file**
 ```
