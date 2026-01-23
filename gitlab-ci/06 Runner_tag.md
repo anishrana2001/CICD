@@ -10,7 +10,7 @@ glab auth status
 glab auth login
 ```
 ```
-anishrana@Anishs-MacBook-Pro 06_Runner_tag % glab auth login
+anishrana@Anishs-MacBook-Pro % glab auth login
 - Signing into gitlab.com
 - glab config set -h gitlab.com git_protocol https
 ✓ Configured Git protocol.
@@ -18,7 +18,7 @@ anishrana@Anishs-MacBook-Pro 06_Runner_tag % glab auth login
 ✓ Configured API protocol.
 ✓ Logged in as anishrana2001
 ✓ Configuration saved to /Users/anishrana/Library/Application Support/glab-cli/config.yml
-anishrana@Anishs-MacBook-Pro 06_Runner_tag % 
+anishrana@Anishs-MacBook-Pro % 
 ```
 
 ## Create a Project from **`git`**
