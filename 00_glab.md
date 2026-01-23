@@ -9,3 +9,14 @@
 - **Multi-Instance**: Switch between GitLab.com, self-hosted, or Dedicated instances seamlessly.
 - **Changelogs & Releases**: Auto-generate changelogs and manage releases (glab release create).
 - **No Context Switching**: Stay in your terminal (VS Code, iTerm) where you're already coding and running CI/CD locally.
+
+
+## How to install it on Mac?
+```
+brew install glab
+```
+
+## Verify it!
+```
+glab --version
+```
