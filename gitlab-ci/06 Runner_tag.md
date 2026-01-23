@@ -26,7 +26,6 @@ anishrana@Anishs-MacBook-Pro %
 mkdir 06_Runner_tag
 cd 06_Runner_tag
 git init
-git add . && git commit -m "Init"
 glab repo create --public --name "06_Runner_tag"
 
 ```
@@ -51,3 +50,14 @@ job_large:
     - echo "This job runs on the large Linux Arm64 instance"
 EOF
 ```
+### Add, Commit and Push the file.
+```
+git add . && git commit -m "Creating a .gitlab-ci.yml file"
+git push -u origin main
+```
+
+### Runners with the gitlab-org tag do not run in privileged mode and cannot be used for Docker-in-Docker builds.
+- Privileged mode grants the job container full host-level access, enabling:
+- Docker daemon startup inside the job (service docker start)
+- docker build, docker run from within CI jobs
+- Kubernetes-style pod spawning
