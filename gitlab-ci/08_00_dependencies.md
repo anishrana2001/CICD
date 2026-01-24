@@ -89,13 +89,13 @@ build_job2:
     paths:
       - nginx_web/
 
-test_job1:
+test_job1:                ## This job will run as we are downloading the artifacts
   stage: test
   image: node:22-alpine
   script:
     - test -f webserver/index.html
 
-test_job2:
+test_job2:                ## This job will be failed as we aren't downloading any artifacts.  
   stage: test
   image: node:22-alpine
   dependencies: []
@@ -103,16 +103,15 @@ test_job2:
     - test -f webserver/index.html
 
 
-test_job3:
+test_job3:                ##  This job will also be failed as we aren't downloading right artifacts.
   stage: test
   image: node:22-alpine
   dependencies:
     - build_job2
   script:
     - test -f webserver/index.html
-	
 
-test_job4:
+test_job4:                ## ✔︎ This job will run sucessfully as we are downloading right artifacts.
   stage: test
   image: node:22-alpine
   dependencies:
@@ -127,3 +126,6 @@ git add . && git commit -m "Modify .gitlab-ci.yml file with dependencies: []"
 git push -u origin main
 ```
 
+## See the below print screen.
+
+<img width="1821" height="954" alt="Screenshot 2026-01-24 at 2 16 52 PM" src="https://github.com/user-attachments/assets/1f411b9b-3e63-484c-9d29-895cf7481ea2" />
