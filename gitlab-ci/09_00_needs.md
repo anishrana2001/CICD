@@ -48,7 +48,7 @@ test_job2:
 test_job3:
   stage: test
   image: node:22-alpine
-  depedencies:
+  dependencies:
     - build_job2
   script:
     - test -f webserver/index.html
@@ -56,7 +56,7 @@ test_job3:
 test_job4:
   stage: test
   image: node:22-alpine
-  depedencies:
+  dependencies:
     - build_job1
   script:
     - test -f webserver/index.html
@@ -121,7 +121,7 @@ test_job2:
 test_job3:
   stage: test
   image: node:22-alpine
-  depedencies:
+  dependencies:
     - build_job2
   script:
     - test -f webserver/index.html
