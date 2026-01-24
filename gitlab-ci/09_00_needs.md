@@ -1,5 +1,5 @@
 ## We have already login into the `glab`, SSHKEY is added 
-[How to add SSHKEY](../GitLAB/SSHKEY.md)
+🍺 ==> ✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md)
 ```
 mkdir 09_00_needs
 cd 09_00_needs
