@@ -47,7 +47,7 @@ anishrana@Anishs-MacBook-Pro GitTest %
 ```
 ### Step 2. Paste the public Key on your Github Account.
 
-`**User Menu`** ==> `**Edit profile`** ==> `**SSH Keys`** ==> `**Add new key`**
+**`User Menu`** ==> **`Edit profile`** ==> **`SSH Keys`** ==> **`Add new key`**
 
 <img width="1874" height="954" alt="Screenshot 2026-01-24 at 5 55 25 PM" src="https://github.com/user-attachments/assets/6072cad0-1adc-44ea-87ce-353b6619b902" />
 
