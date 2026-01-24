@@ -1,4 +1,14 @@
 # How to use extends and why it is different from anchor?
+## We have already login into the `glab`, SSHKEY is added 
+==> ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md)==> ✔︎✔︎ 
+
+```
+mkdir 05-01_extends
+cd 05-01_extends
+git init
+glab repo create --public --name "05-01_extends"
+git remote add origin git@gitlab.com:anishrana2001/05-01_extends.git
+```
 
 ## Test file.
 
