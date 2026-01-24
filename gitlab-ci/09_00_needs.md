@@ -1,9 +1,11 @@
-## We have already login into the `glab`
+## We have already login into the `glab`, SSHKEY is added 
 ```
 mkdir 09_00_needs
 cd 09_00_needs
 git init
 glab repo create --public --name "09_00_needs"
+git remote add origin git@gitlab.com:anishrana2001/09_00_needs.git
+git config core.sshCommand "ssh -i /Users/anishrana/GitTest/id_rsa -F /dev/null"
 ```
 
 
