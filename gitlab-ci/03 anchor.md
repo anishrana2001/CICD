@@ -1,9 +1,13 @@
 ### Create a `03_anchor` project from `glab` utility.
+## We have already login into the `glab`, SSHKEY is added 
+==> ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md)==> ✔︎✔︎ 
+
 ```
 mkdir 03_anchor
 cd 03_anchor
 git init
 glab repo create --public --name "03_anchor"
+git remote add origin git@gitlab.com:anishrana2001/03_anchor.git
 ```
 
 
