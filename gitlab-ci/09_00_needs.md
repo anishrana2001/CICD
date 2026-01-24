@@ -102,8 +102,8 @@ build_job2:
 test_job1:
   stage: test
   image: node:22-alpine
-  needs:
-    - build_job1
+  needs:                 # ==> ✔︎
+    - build_job1         # ==> ✔︎
   script:
     - test -f webserver/index.html
 
@@ -123,8 +123,8 @@ test_job3:
 test_job4:
   stage: test
   image: node:22-alpine
-  needs:
-    - build_job1
+  needs:                     # ==> ✔︎
+    - build_job1             # ==> ✔︎
   dependencies:
     - build_job1
   script:
@@ -133,8 +133,8 @@ test_job4:
 prod_job1:
   stage: prod
   image: alpine
-  needs:
-    - build_job1
+  needs:                      # ==> ✔︎
+    - build_job1              # ==> ✔︎
   script:
     - echo "Deploying to production server..."
 EOF
