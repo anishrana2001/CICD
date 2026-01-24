@@ -57,13 +57,15 @@ anishrana@Anishs-MacBook-Pro GitTest %
 
 
 ### Now, eidt the `git` configuration for this key.
+```
+git config core.sshCommand "ssh -i /Users/anishrana/GitTest/id_rsa -F /dev/null"
+```
+
 #### Why this works:
 - core.sshCommand: Overrides the default SSH command just for this repository.
 - -i ...: Tells SSH exactly which private key file to use.
 - -F /dev/null: Tells SSH to ignore your global ~/.ssh/config file (optional but recommended to prevent conflicts if you have other GitLab keys configured globally).
-```
-git config core.sshCommand "ssh -i /Users/anishrana/GitTest/id_rsa -F /dev/null"
-```
+
 
 ### Verification: You can verify the setting is active by checking the local config:
 ```
