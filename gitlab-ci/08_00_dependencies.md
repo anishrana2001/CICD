@@ -1,9 +1,13 @@
-## We have already login into the `glab`
+# How to remove dependencies from jobs.
+
+## We have already login into the `glab`, SSHKEY is added 
+==> ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md)==> ✔︎✔︎ 
 ```
 mkdir 08_00_dependencies
 cd 08_00_dependencies
 git init
 glab repo create --public --name "08_00_dependencies"
+git remote add origin git@gitlab.com:anishrana2001/08_00_dependencies.git
 ```
 ### Creating a simple 2 stage **`.gitlab-ci.yml`** file.
 ```
