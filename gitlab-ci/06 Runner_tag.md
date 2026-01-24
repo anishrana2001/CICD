@@ -22,11 +22,14 @@ anishrana@Anishs-MacBook-Pro %
 ```
 
 ## Create a Project from **`git`**
+## We have already login into the `glab`, SSHKEY is added 
+==> ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md)==> ✔︎✔︎ 
 ```
 mkdir 06_Runner_tag
 cd 06_Runner_tag
 git init
 glab repo create --public --name "06_Runner_tag"
+git remote add origin git@gitlab.com:anishrana2001/06_Runner_tag.git
 
 ```
 
