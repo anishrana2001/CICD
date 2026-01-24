@@ -51,15 +51,11 @@ job-01_prod:
     - echo "This should run ONLY on prod."
 EOF
 ```
-
+### ACP ==> (A) Add, (C) Commit and (P) Push  the file.
 ```
 git add . ; git commit -m "added .gitlab-ci.yml" ; git push -u origin main
 ```
-
-```
->.gitlab-ci.yml
-```
-
+### Correct the file.
 ```
 cat <<EOF > .gitlab-ci.yml
 stages:
@@ -98,7 +94,7 @@ job-01_prod:
 EOF
 ```
 
-
+### ACP ==> (A) Add, (C) Commit and (P) Push  the file.
 ```
 git add . ; git commit -m "added double quotes" ; git push --set-upstream origin main
 ```
