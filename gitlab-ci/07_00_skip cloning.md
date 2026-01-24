@@ -1,12 +1,15 @@
 ## Skip cloning the git repo.
 
 
-## We have already login into the `glab`
+## We have already login into the `glab`, SSHKEY is added 
+==> ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md)==> ✔︎✔︎ 
 ```
 mkdir 07_00_skip_cloning
 cd 07_00_skip_cloning
 git init
 glab repo create --public --name "07_00_skip_cloning"
+git remote add origin git@gitlab.com:anishrana2001/07_00_skip_cloning.git
+
 ```
 
 ```
