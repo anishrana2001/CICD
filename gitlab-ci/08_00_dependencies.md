@@ -1,7 +1,7 @@
 # How to remove dependencies from jobs.
 
 ## We have already login into the `glab`, SSHKEY is added 
-==> ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md)==> ✔︎✔︎ 
+✅✅ ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md) ✔︎✔︎ ✅✅
 ```
 mkdir 08_00_dependencies
 cd 08_00_dependencies
@@ -12,7 +12,7 @@ git remote add origin git@gitlab.com:anishrana2001/08_00_dependencies.git
 ### Creating a simple 2 stage **`.gitlab-ci.yml`** file.
 ```
 cat <<EOF > .gitlab-ci.yml
-stages:              # We have 2 stages.
+stages:              # ✅✅ We have 2 stages.
   - build
   - test
 
@@ -39,7 +39,7 @@ git add . && git commit -m "Creating a .gitlab-ci.yml file"
 git push -u origin main
 ```
 
-### Creating a 2 stage **`.gitlab-ci.yml`** file with NO dependencies
+###  ❌ ❌ Creating a 2 stage **`.gitlab-ci.yml`** file with NO dependencies
 - So, this pipeline should be failed
 ```
 cat <<EOF > .gitlab-ci.yml
@@ -93,13 +93,13 @@ build_job2:
     paths:
       - nginx_web/
 
-test_job1:                ## This job will run as we are downloading the artifacts
+test_job1:                # ✅ This job will run as we are downloading the artifacts
   stage: test
   image: node:22-alpine
   script:
     - test -f webserver/index.html
 
-test_job2:                ## This job will be failed as we aren't downloading any artifacts.  
+test_job2:                # ❌ This job will be failed as we aren't downloading any artifacts.  
   stage: test
   image: node:22-alpine
   dependencies: []
@@ -107,7 +107,7 @@ test_job2:                ## This job will be failed as we aren't downloading an
     - test -f webserver/index.html
 
 
-test_job3:                ##  This job will also be failed as we aren't downloading right artifacts.
+test_job3:                #  ❌ This job will also be failed as we aren't downloading right artifacts.
   stage: test
   image: node:22-alpine
   dependencies:
@@ -115,7 +115,7 @@ test_job3:                ##  This job will also be failed as we aren't download
   script:
     - test -f webserver/index.html
 
-test_job4:                ## ✔︎ This job will run sucessfully as we are downloading right artifacts.
+test_job4:                # ✅ This job will run sucessfully as we are downloading right artifacts.
   stage: test
   image: node:22-alpine
   dependencies:
