@@ -28,12 +28,14 @@ git remote add origin git@gitlab.com:anishrana2001/10_00_cache.git
 ### Creating a simple 3 stages **`.gitlab-ci.yml`** file
 ```
 cat <<EOF > .gitlab-ci.yml
+
 stages:
   - install
   - build  
   - test
 
 install:
+  image: node:latest
   stage: install
   script:
     - npm install     # Downloads node_modules (5 minutes)
@@ -43,6 +45,7 @@ install:
   artifacts:          # ❌ Don't artifact downloads
     paths: []
 build:
+  image: node:latest
   stage: build
   script:
     - npm run build   # Creates dist/ folder (2 minutes)
@@ -55,6 +58,7 @@ build:
   dependencies:
     - install
 test:
+  image: node:latest
   stage: test
   script:
     - npm test       # Needs dist/ from build job
