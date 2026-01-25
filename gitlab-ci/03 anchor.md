@@ -1,6 +1,6 @@
 ## Create a `03_anchor` project from `glab` utility.
 ### We have already login into the `glab`, SSHKEY is added 
-==> ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md)==> ✔︎✔︎ 
+✅ ✅ ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md) ✅ ✅ 
 
 ```
 mkdir 03_anchor
@@ -104,8 +104,8 @@ git add . ; git commit -m "added double quotes" ; git push --set-upstream origin
 
 ```
 cat <<EOF > .gitlab-ci.yml
-stages:                   # Defines the pipeline order: first build, then deploy_staging, then deploy_prod.
-  - build.                # Jobs assigned to `build` run `first`, then `staging jobs`, then `production jobs.`
+stages:                 # ✅ Defines the pipeline order: first build, then deploy_staging, then deploy_prod.
+  - build.              # ✅ Jobs assigned to `build` run `first`, then `staging jobs`, then `production jobs.`
   - deploy_staging
   - deploy_prod
 
@@ -118,7 +118,7 @@ build_file:
       - initial-file.txt
 
 # Job name starts with a dot (.job-template) → hidden / not run directly.
-.job-template: &job_template  # &job_template creates a YAML anchor named job_template that can be reused.
+.job-template: &job_template  # ✅ `&job_template` creates a YAML anchor named `job_template` that can be reused.
   stage: deploy_prod
   environment:
     name: production
@@ -130,8 +130,8 @@ build_file:
     - if [[ "$CI_ENVIRONMENT_NAME" == "production" ]]; then echo "This should run ONLY on production env."; fi
 
 job-01_staging_new:
-  <<: *job_template          # <<: *job_template → loads (extends) all fields from the anchor job_template.
-  stage: deploy_staging      # So it initially gets:`stage: deploy_prod` , Then you override this fields:
+  <<: *job_template          # ✅  <<: *job_template → loads (extends) all fields from the anchor job_template.
+  stage: deploy_staging      # ✅  So it initially gets:`stage: deploy_prod` , Then you override this fields:
   environment:
     name: staging
   variables:
@@ -139,7 +139,7 @@ job-01_staging_new:
     DB_NAME: staging-db
 
 
-job-01_production_new:   # &job_template creates a YAML anchor named job_template that can be reused.
-  <<: *job_template.     # # <<: *job_template → loads (extends) all fields from the anchor job_template.
+job-01_production_new:   # ✅  `&job_template` creates a YAML anchor named job_template that can be reused.
+  <<: *job_template.     # ✅  <<: *job_template → loads (extends) all fields from the anchor job_template.
 ```
 
