@@ -1,4 +1,4 @@
-### GitLAB document link 🍺 ==>  ✔︎
+### ✅✅ GitLAB document link ✅✅
 ```
 https://docs.gitlab.com/ci/runners/hosted_runners/linux/
 ```
@@ -13,17 +13,17 @@ glab auth login
 anishrana@Anishs-MacBook-Pro % glab auth login
 - Signing into gitlab.com
 - glab config set -h gitlab.com git_protocol https
-✓ Configured Git protocol.
+✅ Configured Git protocol.
 - glab config set -h gitlab.com api_protocol https
-✓ Configured API protocol.
-✓ Logged in as anishrana2001
-✓ Configuration saved to /Users/anishrana/Library/Application Support/glab-cli/config.yml
+✅ Configured API protocol.
+✅ Logged in as anishrana2001
+✅ Configuration saved to /Users/anishrana/Library/Application Support/glab-cli/config.yml
 anishrana@Anishs-MacBook-Pro % 
 ```
 
 ## Create a Project from **`git`**
 ## We have already login into the `glab`, SSHKEY is added 
-==> ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md)==> ✔︎✔︎ 
+✅✅ ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md) ✔︎✔︎ ✅✅
 ```
 mkdir 06_Runner_tag
 cd 06_Runner_tag
