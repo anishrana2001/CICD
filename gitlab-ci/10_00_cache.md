@@ -64,7 +64,7 @@ EOF
 ```
 ### ACP ==> (A) Add, (C) Commit and (P) Push  the file.
 ```
-git add . && git commit -m "Modify .gitlab-ci.yml file with without `needs`"
+git add . && git commit -m "Modify .gitlab-ci.yml file with `cache`"
 git push -u origin main
 ```
 
