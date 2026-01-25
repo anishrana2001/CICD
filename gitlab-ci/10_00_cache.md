@@ -21,7 +21,7 @@ mkdir 10_00_cache
 cd 10_00_cache
 git init
 glab repo create --public --name "10_00_cache"
-git remote add origin git@gitlab.com:anishrana2001/10_00_cache.git
+git remote set-url origin git@gitlab.com:anishrana2001/10_00_cache.git
 ```
 
 
