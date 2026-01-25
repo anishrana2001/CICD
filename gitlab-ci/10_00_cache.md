@@ -49,5 +49,5 @@ test:
     - build
 ```
 
-**1st Pipeline**: install (5min ↓download) → build (2min) → test (1min)
-**2nd Pipeline**: install (30sec ↑cache hit) → build (2min) → test (1min)
+### **1st Pipeline**: install (5min ↓download) → build (2min) → test (1min)
+### **2nd Pipeline**: install (30sec ↑cache hit) → build (2min) → test (1min)
