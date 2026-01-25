@@ -1,5 +1,5 @@
 ## We have already login into the `glab`, SSHKEY is added 
-==> ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md)==> ✔︎✔︎ 
+✅✅ ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md) ✔︎✔︎ ✅✅
 ```
 mkdir 09_00_needs
 cd 09_00_needs
@@ -13,7 +13,7 @@ git remote add origin git@gitlab.com:anishrana2001/09_00_needs.git
 ### Creating a simple 3 stages **`.gitlab-ci.yml`** file (without `needs`)
 ```
 cat <<EOF > .gitlab-ci.yml
-stages:              # We have 3 stages.
+stages:              # ✅✅✅ We have 3 stages.
   - build
   - test
   - prod
@@ -125,8 +125,8 @@ test_job3:
 test_job4:
   stage: test
   image: node:22-alpine
-  needs:                     # ==> ✔︎
-    - build_job1             # ==> ✔︎
+  needs:                     # ✅✅ 
+    - build_job1             # ✅✅
   dependencies:
     - build_job1
   script:
@@ -135,8 +135,8 @@ test_job4:
 prod_job1:
   stage: prod
   image: alpine
-  needs:                      # ==> ✔︎
-    - build_job1              # ==> ✔︎
+  needs:                      # ✅✅
+    - build_job1              # ✅✅
   script:
     - echo "Deploying to production server..."
 EOF
