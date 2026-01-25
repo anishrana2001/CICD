@@ -24,53 +24,69 @@ glab repo create --public --name "10_00_cache"
 git remote set-url origin git@gitlab.com:anishrana2001/10_00_cache.git
 ```
 
-
 ### Creating a simple 3 stages **`.gitlab-ci.yml`** file
 ```
 cat <<EOF > .gitlab-ci.yml
+image: node:latest  # ✅ Global image (DRY principle)
 
 stages:
   - install
-  - build  
+  - build
   - test
 
 install:
-  image: node:latest
   stage: install
   script:
-    - npm install     # Downloads node_modules (5 minutes)
-  cache:              # ✅ Reuses across pipelines
+    - npm install
+  cache:  # ✅ Perfect for node_modules
     paths:
       - node_modules/
-  artifacts:          # ❌ Don't artifact downloads
-    paths: []
+
 build:
-  image: node:latest
   stage: build
   script:
-    - npm run build   # Creates dist/ folder (2 minutes)
-  cache:              # ✅ Reuse node_modules from cache
+    - npm run build  # Now exists
+  cache:
     paths:
       - node_modules/
-  artifacts:          # ✅ Pass built files to test job
+  artifacts:  # ✅ Passes to test
     paths:
       - dist/
-  dependencies:
-    - install
+    expire_in: 1 hour
+
 test:
-  image: node:latest
   stage: test
   script:
-    - npm test       # Needs dist/ from build job
-  dependencies:      # ✅ Downloads artifacts from build
+    - npm test  # Now exists
+  dependencies:
     - build
 EOF
 ```
 ### ACP ==> (A) Add, (C) Commit and (P) Push  the file.
 ```
-git add . && git commit -m "Modify .gitlab-ci.yml file with `cache`"
+git add . && git commit -m "Modify .gitlab-ci.yml file with package.json"
 git push -u origin main
 ```
+
+
+
+### Creating a **`.package.json`** file so that we can install the npm
+```
+cat <<EOF > package.json
+{
+  "name": "10_00_cache",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "mkdir -p dist && echo 'Built app' > dist/index.html",
+    "test": "ls dist/ && echo 'Tests passed!'"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.21"
+  }
+}
+EOF
+```
+
 
 ### **1st Pipeline**: install (5min ↓download) → build (2min) → test (1min)
 ### **2nd Pipeline**: install (30sec ↑cache hit) → build (2min) → test (1min)
