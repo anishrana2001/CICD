@@ -1,6 +1,6 @@
 # How to use extends and why it is different from anchor?
 ## We have already login into the `glab`, SSHKEY is added 
-==> ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md)==> ✔︎✔︎ 
+✅ ✅  ✔︎✔︎ [How to add SSHKEY](../GitLAB/SSHKEY.md) ✔︎✔︎ ✅ ✅ 
 
 ```
 mkdir 05-01_extends
@@ -64,7 +64,7 @@ build_file:
   artifacts:
     paths:
       - initial-file.txt
-# Job name starts with a dot (.job-template) → hidden / not run directly.
+# ✅ Job name starts with a dot (.job-template) → hidden / not run directly.
 .job-template:
   stage: deploy_prod
   environment:
@@ -77,15 +77,15 @@ build_file:
     - if [[ "$CI_ENVIRONMENT_NAME" == "production" ]]; then echo "This should run ONLY on production env."; fi
 
 
-job-01_staging_new:         # Creating a new job 'job-01_staging_new'
-  extends: .job-template    # We use `extends` and call our hidden job.
-  stage: deploy_staging     # Overwrite the variable
+job-01_staging_new:         # ✅ Creating a new job 'job-01_staging_new'
+  extends: .job-template    # ✅ We use `extends` and call our hidden job.
+  stage: deploy_staging     # ✅ Overwrite the variable
   environment:
     name: staging
   variables:
-    DB_NAME: "staging-db"   # No need to define variable `DATABASE_TYPE: "Mariadb"`
+    DB_NAME: "staging-db"    # ❌ No need to define variable `DATABASE_TYPE: "Mariadb"`
 
-job-01_production_new:         # Creating a new job 'job-01_production_new'
+job-01_production_new:       # ✅ Creating a new job 'job-01_production_new'
   extends: .job-template
 
 ```
