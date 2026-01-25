@@ -34,6 +34,7 @@ stages:
   - build
   - test
 
+## npm (Node Package Manager) is the standard package manager for the Node.js. JavaScript runtime environment. 
 install:
   stage: install
   script:
