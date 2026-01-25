@@ -62,13 +62,6 @@ test:
     - build
 EOF
 ```
-### ACP ==> (A) Add, (C) Commit and (P) Push  the file.
-```
-git add . && git commit -m "Modify .gitlab-ci.yml file with package.json"
-git push -u origin main
-```
-
-
 
 ### Creating a **`.package.json`** file so that we can install the npm
 ```
@@ -85,6 +78,11 @@ cat <<EOF > package.json
   }
 }
 EOF
+```
+### ACP ==> (A) Add, (C) Commit and (P) Push  the file.
+```
+git add . && git commit -m "Modify .gitlab-ci.yml file with package.json"
+git push -u origin main
 ```
 
 
