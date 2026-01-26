@@ -2,7 +2,7 @@
 
 If you do **not** define `stages:` in your `.gitlab-ci.yml`, GitLab CI/CD uses these **4 default stages**:
 
-```text
+```yml
 .pre
 build
 test
@@ -18,7 +18,7 @@ deploy
 - **.post**: Runs after all other stages (cleanup, notifications, etc.).
 
 ## Example Without Custom stages:
-```
+```yml
 lint_code:
   stage: .pre
   script:
@@ -42,7 +42,7 @@ deploy_app:
 
 ## Best Practice
 ### It is usually better to define your own stages explicitly:
-```
+```yml
 stages:        # Override defaults
   - install
   - build
