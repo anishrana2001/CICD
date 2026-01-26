@@ -17,6 +17,33 @@ deploy
 - **deploy**: Used to deploy your application.
 - **.post**: Runs after all other stages (cleanup, notifications, etc.).
 
+
+
+## Run a simple job without defining the stage.
+
+```yaml
+build_aapache:         # Job name.
+    script:
+        - mkdir build
+        - echo "Welcome to devops-wala" > build/index.html
+```
+
+![See the result](<Screenshot 2026-01-26 at 4.45.59 PM.png>)
+
+---
+## Let's add one more job without defining any stage.
+
+```yaml
+build_aapache:         # Job name.
+    script:
+        - mkdir build
+        - echo "Welcome to devops-wala" > build/index.html
+
+test_aapache:
+    script:
+        - test -f "build/index.html"
+```
+
 ## Example Without Custom stages:
 ```yml
 lint_code:
