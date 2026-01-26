@@ -42,10 +42,10 @@ deploy_app:
 
 ## Best Practice
 ### It is usually better to define your own stages explicitly:
-
+```
 stages:        # Override defaults
   - install
   - build
   - test
   - deploy
-
+```
