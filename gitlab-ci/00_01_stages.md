@@ -32,6 +32,8 @@ build_aapache:         # Job name.
 
 ---
 ## Let's add one more job without defining any stage.
+- You will notice that a new container will be created for 2nd job.
+- Same stage but containers will be different.
 
 ```yaml
 build_aapache:         # Job name.
@@ -39,7 +41,7 @@ build_aapache:         # Job name.
         - mkdir build
         - echo "Welcome to devops-wala" > build/index.html
 
-test_aapache:
+test_aapache:          # ❌ job fail, will explain later, why?
     script:
         - test -f "build/index.html"
 ```
