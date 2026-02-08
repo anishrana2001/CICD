@@ -6,7 +6,7 @@ Students, freshers, early-career IT professionals
 
 ---
 
-## 1️⃣ Why Do We Need Git? (The Problem Statement)
+## Why Do We Need Git? (The Problem Statement)
 
 ### Real-life Indian Scenario 🇮🇳
 
@@ -31,7 +31,7 @@ Imagine a **college group project** with 4–5 students.
 
 ---
 
-## What is Git?
+## 1️⃣ What is Git?
 
 ### Definition
 
