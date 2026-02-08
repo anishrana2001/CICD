@@ -238,9 +238,9 @@ In a company:
 
 ## 9️⃣ Final Takeaway
 
-> **Git** → Version control system
-> **GitHub** → Collaboration & visibility
-> **GitLab** → Enterprise DevOps platform
+- **Git** → Version control system
+- **GitHub** → Collaboration & visibility
+- **GitLab** → Enterprise DevOps platform
 
 ---
 
