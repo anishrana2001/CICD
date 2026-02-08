@@ -1,9 +1,9 @@
 ## 7️⃣ Common Mistakes Students Make
 
-❌ Rebasing `main` branch
-❌ Using `reset --hard` blindly
-❌ Forgetting stashed changes
-❌ Rewriting shared history
+- ❌ Rebasing `main` branch
+- ❌ Using `reset --hard` blindly
+- ❌ Forgetting stashed changes
+- ❌ Rewriting shared history
 
 ---
 
