@@ -57,7 +57,7 @@ sudo gitlab-runner register \
   --description "Shell Runner - My Local"
 ```
 
-## Example **.gitlab-ci.yml**
+### Example **.gitlab-ci.yml**
 ```yaml
 stages:
   - build
@@ -81,7 +81,7 @@ test_job:
     - npm test
 ```
 
-## Configuration (config.toml)
+### Configuration (config.toml)
 ```yaml
 [[runners]]
   name = "shell-runner"
@@ -95,7 +95,7 @@ test_job:
 ```
 
 
-## 2. DOCKER EXECUTOR
+# 2. DOCKER EXECUTOR
 - **What It Does:**  
     - Runs each job in an isolated Docker container with specified image. Perfect for containerized applications.
 
@@ -106,7 +106,7 @@ test_job:
     - Reproducible builds across environments
     - Most Common Choice for Modern CI/CD
 
-## Pros
+### Pros
 - ✅ Complete job isolation (each job = fresh container)
 - ✅ No dependency conflicts
 - ✅ Reproducible builds (same image = same environment)
@@ -114,23 +114,25 @@ test_job:
 - ✅ Easy to scale horizontally
 - ✅ Production-ready
 
-Cons
+### Cons
 - ❌ Slower than shell (container startup overhead)
 - ❌ Requires Docker daemon
 - ❌ Higher resource usage per job
 - ❌ Docker-in-Docker security considerations
 
-## Installation
-
+### Installation
+---
+#### Install Docker
 ```
-# Install Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-
-# Install GitLab Runner
+```
+#### Install GitLab Runner
+```
 sudo apt-get install gitlab-runner
-
-# Register Docker executor runner
+```
+#### Register Docker executor runner
+```
 sudo gitlab-runner register \
   --url https://gitlab.com/ \
   --registration-token <YOUR_TOKEN> \
@@ -138,7 +140,7 @@ sudo gitlab-runner register \
   --docker-image ubuntu:latest \
   --description "Docker Runner"
 ```
-#### Example .gitlab-ci.yml - Node.js Project
+### Example .gitlab-ci.yml - Node.js Project
 ```yaml
 stages:
   - build
@@ -223,7 +225,7 @@ build_docker:
 ```
 
 
-## 3. KUBERNETES EXECUTOR ⭐ (Advanced)
+# 3. KUBERNETES EXECUTOR ⭐ (Advanced)
 
 - **What It Does**
     - Runs each job as a Pod in Kubernetes cluster. Best for large-scale enterprise CI/CD.
@@ -355,16 +357,17 @@ deploy_k8s:
 - Legacy CI/CD pipelines
 - AWS/Azure auto-scaling needs
 - NOT recommended for new projects
-
-#### Comparison: When to Choose What?
-#### ✅ Choose SHELL when:
+---
+---
+# Comparison: When to Choose What?
+### ✅ Choose SHELL when:
 ```
 - Simple scripts, no Docker needed
 - Testing on specific OS
 - Fast local development feedback
 - Single machine, low security requirements
 ```
-✅ Choose DOCKER when:
+### ✅ Choose DOCKER when:
 ```
 - Building/testing containerized apps
 - Most modern CI/CD pipelines ← START HERE
@@ -373,7 +376,7 @@ deploy_k8s:
 - Cost-conscious but needs isolation
 ```
 
-✅ Choose KUBERNETES when:
+### ✅ Choose KUBERNETES when:
 ```
 - 50+ concurrent jobs
 - Microservices deployments ← YOUR SCENARIO
@@ -382,7 +385,7 @@ deploy_k8s:
 - Dynamic resource allocation required
 ```
 
-#### Performance Comparison
+### Performance Comparison
 ```
 Job Startup Time:
   Shell:         10-50ms   (instant)
@@ -396,8 +399,8 @@ Resource Overhead per Job:
   Kubernetes:    100-500MB (medium)
   Docker Machine:500MB-1GB (large)
 ```
-### Best Practices
-#### 1. Shell Executor
+# Best Practices
+### 1. Shell Executor
 ```
 ##### DO: Use for quick scripts
 shell_job:
@@ -432,7 +435,7 @@ k8s_job:
 # DON'T: Run without RBAC restrictions
 ```
 
-#### Decision Tree
+# Decision Tree
 ```
 Do you have Docker installed and want isolation?
 ├─ YES → Use DOCKER Executor
@@ -447,7 +450,7 @@ Do you have Docker installed and want isolation?
             └─ Good for: Enterprise scale (YOUR CASE!)
 ```
 
-#### Quick Setup Commands
+### Quick Setup Commands
 #### Docker Executor (Recommended Start)
 ```
 sudo gitlab-runner register \
@@ -525,5 +528,4 @@ docker_build:
     - docker:dind
   script:
     - docker build -t my-app:$CI_COMMIT_SHA .
-github.com favicon
-CICD/gitlab-ci at main · anishrana2001/CICD · GitHub
+```
