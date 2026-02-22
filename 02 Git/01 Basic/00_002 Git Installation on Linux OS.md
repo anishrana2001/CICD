@@ -27,7 +27,7 @@
 
 ---
 
-# 1️⃣ What is Git?
+# 🚀 1️⃣ What is Git?
 
 Git is a **Distributed Version Control System**.
 
@@ -437,19 +437,6 @@ You learned:
 
 ---
 
-# 🚀 Next Topics
-
-Recommended:
-
-* Git clone
-* Git push
-* Git pull
-* Git branch
-* Git merge
-* Git rebase
-* Git stash
-
----
 
 # ⭐ End of Document
 
