@@ -93,9 +93,9 @@ Output Example:
 git version 2.34.1
 ```
 
-If installed → No need to install again.
+**If installed** 👉 ❌ No need to install again.
 
-If not installed → Follow below steps.
+**If not installed** 👉 ✅ Follow below steps.
 
 ---
 
@@ -129,7 +129,7 @@ Setting up git
 
 ---
 
-# 6️⃣ Install Git on CentOS / RHEL / Rocky Linux
+# 6️⃣ Install Git on CentOS / RHEL / Rocky Linux. ![alt text](image-1.png)
 
 ## Step 1: Update
 
@@ -166,7 +166,7 @@ Installed:
 
 ---
 
-# 7️⃣ Install Git on Fedora
+# 7️⃣ Install Git on Fedora. ![alt text](image.png)
 
 Run:
 
