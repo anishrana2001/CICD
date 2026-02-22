@@ -129,7 +129,7 @@ Setting up git
 
 ---
 
-# 6️⃣ Install Git on CentOS / RHEL / Rocky Linux. ![alt text](image-1.png)
+# 6️⃣ Install Git on CentOS / RHEL / Rocky Linux. 
 
 ## Step 1: Update
 
@@ -166,7 +166,7 @@ Installed:
 
 ---
 
-# 7️⃣ Install Git on Fedora. ![alt text](image.png)
+# 7️⃣ Install Git on Fedora. 
 
 Run:
 
